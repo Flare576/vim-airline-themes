@@ -65,11 +65,11 @@ function! airline#themes#solarized#refresh()
   if s:background == 'dark'
     let s:N1 = [(s:dark_text ? s:base03 : s:base3), (s:use_green ? s:green : s:base1), 'bold']
     let s:N2 = [s:base2, (s:tty ? s:base01 : s:base00), '']
-    let s:N3 = [s:base01, s:base02, '']
+    let s:N3 = [s:base1, s:base02, ''] " JDF was [s:base01, s:base02, '']
   else
     let s:N1 = [(s:dark_text ? s:base03 : s:base2), (s:use_green ? s:green : s:base00), 'bold']
     let s:N2 = [(s:tty ? s:base01 : s:base2), s:base1, '']
-    let s:N3 = [s:base1, s:base2, '']
+    let s:N3 = [s:base01, s:base2, 'bold'] " JDF was [s:base1, s:base2, '']
   endif
   let s:NF = [s:orange, s:N3[1], '']
   let s:NW = [s:base3, s:orange, '']
@@ -77,7 +77,7 @@ function! airline#themes#solarized#refresh()
     let s:NM = [s:base1, s:N3[1], '']
     let s:NMi = [s:base2, s:N3[1], '']
   else
-    let s:NM = [s:base01, s:N3[1], '']
+    let s:NM = [s:green, s:N3[1], 'bold'] " JDF was [s:base01, s:N3[1], '']
     let s:NMi = [s:base02, s:N3[1], '']
   endif
 
@@ -115,10 +115,10 @@ function! airline#themes#solarized#refresh()
     if s:dark_inactive_border
       let s:IA = [s:base01, s:base02, '']
     else
-      let s:IA = [s:base02, s:base00, '']
+      let s:IA = [s:magenta, s:base01, ''] " JDF was [s:base02, s:base00, '']
     endif
   else
-    let s:IA = [s:base2, s:base0, '']
+    let s:IA = [s:cyan, s:base0, 'bold'] " JDF was [s:base2, s:base0, '']
   endif
 
   """"""""""""""""""""""""""""""""""""""""""""""""
